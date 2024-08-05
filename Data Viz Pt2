@@ -103,10 +103,10 @@ def update_output_container(selected_statistics, input_year):
 	# Hint:Use Vehicle_Type and Advertising_Expenditure columns
         exp_rec= recession_data.groupby("Vehicle_Type")["Advertising_Expenditure"].sum()
         R_chart3 = dcc.Graph(
-                    figure=px.pie(exp_rec,
-                    values="Advertising_Expenditure",
-                 names="Vehicle_Type",
-                 title="Expenditure by Vehicle Type"
+        figure=px.pie(exp_rec,
+        values="Advertising_Expenditure",
+        names="Vehicle_Type",
+        title="Expenditure by Vehicle Type"
                 )
         )
 
