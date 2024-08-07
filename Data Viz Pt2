@@ -96,11 +96,11 @@ def update_output_container(selected_statistics, input_year):
         
         # use groupby to create relevant data for plotting
         #Hint:Use Vehicle_Type and Automobile_Sales columns
-        average_sales = recession_data.groupby("Vehicle_Type")["Automotive_Sales"].mean().reset_index()                  
+        average_sales = recession_data.groupby("Vehicle_Type")["Automobile_Sales"].mean().reset_index()                  
         R_chart2  = dcc.Graph(
             figure=px.bar(average_sales,
             x='Vehicle_Type',
-            y='Automotive_Sales',
+            y='Automobile_Sales',
             title="Sales by Type"))
         
 # Plot 3 Pie chart for total expenditure share by vehicle type during recessions
@@ -152,7 +152,7 @@ def update_output_container(selected_statistics, input_year):
 # Plot 2 Total Monthly Automobile sales using line chart.
         # grouping data for plotting.
 	# Hint:Use the columns Month and Automobile_Sales.
-        mas=data.groupby("Month")["Automotive_Sales"].sum()
+        mas=data.groupby("Month")["Automobile_Sales"].sum()
         Y_chart2 = dcc.Graph(figure=px.line(yearly_data,x='Month',
                       y='Automobile_Sales',title="Monthly Automobile Sales for the year {}".format(input_year)))
 
